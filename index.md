@@ -45,7 +45,20 @@ layout: default
 		<h2>Ipsum sed dolor</h2>
 	</header>
 	<div class="posts">
-		<article>
+            {% for post in site.posts %} 
+            <article>
+                <a href="{{post.url | absolute_url}}" class="image"><img src="{{post.image}}" alt="" /></a>
+				<h3>{{post.title}}</h3>
+                <p>{{post.excerpt}}</p>
+				<ul class="actions">
+					<li><a href="#" class="button">More</a></li>
+				</ul>							
+            </article>
+            {% endfor %}
+			
+
+	
+		<!--<article>
 			<a href="#" class="image"><img src="assets/images/pic01.jpg" alt="" /></a>
 			<h3>Interdum aenean</h3>
 			<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
@@ -92,6 +105,6 @@ layout: default
 			<ul class="actions">
 				<li><a href="#" class="button">More</a></li>
 			</ul>
-		</article>
+		</article>-->
 	</div>
 </section>
